@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         WP
+// @name         WP Gerb-to-Links
 // @namespace    http://tampermonkey.net/
-// @version      2024-10-19
+// @version      1.1
 // @description  try to take over the world!
 // @author       @bagd1k
 // @match        https://wildpolitics.ru/war/*
