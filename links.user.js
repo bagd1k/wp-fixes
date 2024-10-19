@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         WP Gerb-to-Links
+// @name         WP Gerbs-to-Links
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  try to take over the world!
