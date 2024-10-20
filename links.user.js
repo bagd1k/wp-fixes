@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WP Gerbs-to-Links
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2.1
 // @description  try to take over the world!
 // @author       @bagd1k
 // @match        https://wildpolitics.ru/war/*
@@ -83,25 +83,20 @@
         "AT-AT": "26",
         "PL-DS": "31"
     }
-    // Находим все картинки с нужным src
     const images = document.querySelectorAll('img[src*="/static/img/regions/"]');
-
     images.forEach(image => {
         const src = image.src;
-
-        // Извлекаем код региона из src
         const regionCode = src.match(/regions\/(.*?)\.png/)[1];
-
-        // Проверяем, есть ли код в объекте соответствия
         if (regions[regionCode]) {
-            // Создаем ссылку
             const link = document.createElement('a');
             link.href = `https://wildpolitics.ru/region/${regions[regionCode]}/`;
             link.appendChild(image.cloneNode(true));
-
-            // Заменяем картинку на ссылку с картинкой внутри
             image.parentNode.replaceChild(link, image);
         }
     });
+    const graphContainer = document.getElementById('graph-container');
+    if (graphContainer) {
+        graphContainer.style.display = 'block';
+    }
 })();
 
